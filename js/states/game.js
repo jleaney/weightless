@@ -11,7 +11,7 @@ var clickNum = 1;
 
 var changed = false;
 
-var downloadAmount = 500;
+var downloadAmount = 100;
 
 var clickVolume = 0.15;
 
@@ -130,7 +130,7 @@ class Game {
     
     actionOnClick() {
         
-        window.open("https://cl.ly/2h2y2R223f44");
+        window.open("https://cl.ly/3A1S3Y0U0Z3R");
     }
     
 }
