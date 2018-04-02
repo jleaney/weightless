@@ -130,7 +130,7 @@ class Game {
     
     actionOnClick() {
         
-        window.open("https://cl.ly/3A1S3Y0U0Z3R");
+        window.open("https://cl.ly/2I3t1v0V4023");
     }
     
 }
