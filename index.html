@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Weightless</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui shrink-to-fit=no" />
+	<script src="js/phaser.min.js"></script>    
+    
+	<script src="js/states/boot.js"></script>
+	<script src="js/states/preloader.js"></script>
+	<script src="js/states/game.js"></script>
+
+</head>
+<body>
+    <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+                background: #10192c;
+                height: 100%
+            }
+        </style>
+
+        <div id="container">
+            <div id='game'></div>
+        </div>
+
+    <script type="text/javascript">
+
+    (function () {
+
+        var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'game', true);
+        
+        game.state.add('Boot', RocketMaze.Boot);
+        game.state.add('Preloader', RocketMaze.Preloader);
+        game.state.add('Game', RocketMaze.Game);
+        
+        game.state.start('Boot');
+    })();
+    </script>
+    
+</body>
+</html>
