@@ -4,6 +4,15 @@ class Preloader {
     
     preload() {
         
+         this.wait = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "wait.");
+
+         this.wait.anchor.set(0.5);
+         this.wait.font = 'Arial';
+         this.wait.fontSize = 50*sr;
+         this.wait.align = 'center';
+         this.wait.fill = '#FFFFFF';
+         this.wait.stroke = '#FFFFFF';
+        
 		this.load.image('heart', 'assets/images/Heart.png');
         this.load.image('circle', 'assets/images/Circle.png');
         this.load.image('download', 'assets/images/Download.png');
@@ -14,6 +23,9 @@ class Preloader {
     }
     
     create() {
+        
+        
+        
         
         this.state.start('Game');
     }
