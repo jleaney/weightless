@@ -11,9 +11,9 @@ var clickNum = 1;
 
 var changed = false;
 
-var downloadAmount = 1000;
+var downloadAmount = 500;
 
-var clickVOlume = 0.2;
+var clickVolume = 0.2;
 
 var word = ['WEIGHTLESS', 'BEAUTIFUL', 'AMAZING', 'GORGEOUS', 'RAD', 'FABULOUS', 'COOL', 'AMAZEBALLS', 'STUNNING',
            'PRETTY', 'PERFECT', 'LIT', 'LOVELY', 'POWERFUL', 'VIBRANT', 'UNSTOPPABLE', 'FASHIONABLE', 'READY', 'SPECIAL', 'INCREDIBLE',
@@ -81,7 +81,7 @@ class Game {
                 changed = false;
             }
         
-        if (x > word.length) {
+        if (x >= word.length) {
             x = 0;
         }
         
