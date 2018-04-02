@@ -11,11 +11,17 @@ var clickNum = 1;
 
 var changed = false;
 
+var downloadAmount = 1000;
+
+var clickVOlume = 0.2;
+
 var word = ['WEIGHTLESS', 'BEAUTIFUL', 'AMAZING', 'GORGEOUS', 'RAD', 'FABULOUS', 'COOL', 'AMAZEBALLS', 'STUNNING',
            'PRETTY', 'PERFECT', 'LIT', 'LOVELY', 'POWERFUL', 'VIBRANT', 'UNSTOPPABLE', 'FASHIONABLE', 'READY', 'SPECIAL', 'INCREDIBLE',
            'HANDSOME', 'SMASHING', '10/10'];
 
 var x = 0;
+
+var buttonCreated = false;
 
 class Game {
     
@@ -34,9 +40,8 @@ class Game {
         this.music = this.game.add.audio('weightless');
         this.music.play();
         
-        this.box = this.game.add.sprite(this.game.world.centerX, this.game.world.height, 'box');
-        this.box.scale.setTo(1, 0);
-        this.box.anchor.setTo(0.5, 0);
+        this.clickSound = this.game.add.audio('clickSound');
+        this.clickSound.volume = 0.2;
         
         this.heart = this.game.add.sprite(this.game.world.centerX, this.game.world.height / 4 * 3, 'heart');
         this.heart.anchor.setTo(0.5);
@@ -51,6 +56,8 @@ class Game {
             heartAnimation.start();
             beautifulCounter += 1;
             clickNum += 1;
+            this.clickSound.play();
+            this.clickSound.volume = clickVolume;
 //            x = Math.floor(Math.random() * word.length);
 //            textColor = Math.random() * 0xFFFFFF;
                 
@@ -77,9 +84,23 @@ class Game {
         if (x > word.length) {
             x = 0;
         }
+        
+        if (clickNum >= downloadAmount && !buttonCreated) {
+            this.createButton();
+            buttonCreated = true;
+            this.instructionsText.text = "";
+        }
     }
     
     createText() {
+        
+          this.instructionsText = this.game.add.text(this.game.world.centerX, this.game.world.height/3 - this.game.world.height/3/2, "Reach " + downloadAmount + " for download");
+        
+         this.instructionsText.anchor.set(0.5);
+         this.instructionsText.font = 'Arial';
+         this.instructionsText.fontSize = 15*sr;
+         this.instructionsText.align = 'center';
+         this.instructionsText.fill = '#AAAAAA';
         
          this.beautifulCounterText = this.game.add.text(this.game.world.centerX, this.game.world.height/3, "");
 
@@ -87,11 +108,31 @@ class Game {
          this.beautifulCounterText.font = 'Arial';
          this.beautifulCounterText.fontSize = 25*sr;
          this.beautifulCounterText.align = 'center';
-        this.beautifulCounterText.fill = '#FFFFFF';
+         this.beautifulCounterText.fill = '#FFFFFF';
          this.beautifulCounterText.stroke = '#FFFFFF';
         
     }
 
+    createButton() {
+        
+        var button = this. game.add.button(this.game.world.centerX, this.game.world.height/3 - this.game.world.height/3/2, 'download', this.actionOnClick, this, 2, 1, 0);
+        
+        if (this.game.device.desktop) {
+            button.scale.setTo(1);
+        }
+        
+        else {
+            button.scale.setTo(2);
+        }
+        
+        button.anchor.setTo(0.5);
+    }
+    
+    actionOnClick() {
+        
+        window.open("https://cl.ly/2h2y2R223f44");
+    }
+    
 }
 
 RocketMaze.Game = new Game();
