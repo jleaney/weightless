@@ -13,7 +13,7 @@ var changed = false;
 
 var downloadAmount = 500;
 
-var clickVolume = 0.2;
+var clickVolume = 0.15;
 
 var word = ['WEIGHTLESS', 'BEAUTIFUL', 'AMAZING', 'GORGEOUS', 'RAD', 'FABULOUS', 'COOL', 'AMAZEBALLS', 'STUNNING',
            'PRETTY', 'PERFECT', 'LIT', 'LOVELY', 'POWERFUL', 'VIBRANT', 'UNSTOPPABLE', 'FASHIONABLE', 'READY', 'SPECIAL', 'INCREDIBLE',
