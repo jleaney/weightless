@@ -130,7 +130,7 @@ class Game {
     
     actionOnClick() {
         
-        window.open("https://cl.ly/2I3t1v0V4023");
+        window.open("https://d2ffutrenqvap3.cloudfront.net/items/0w3C462W3G1j1b0K3G1N/Weightless.mp3");
     }
     
 }
